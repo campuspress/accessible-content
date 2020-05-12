@@ -1,0 +1,96 @@
+@import 'icons-admin';
+@import 'colors';
+
+.campus-a11y-admin-media {
+
+	.campus-a11y-input {
+
+		input {
+			width: 100%;
+		}
+
+		.campus-a11y-alt-length {
+			text-align: center;
+			color: $ui-fg;
+			font-size: .8em;
+
+			&.campus-a11y-warning {
+				color: $warning;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.campus-a11y-input, .campus-a11y-toggle {
+		display: block;
+		position: relative;
+		padding-right: 30px;
+		margin-bottom: .5em;
+
+		.campus-a11y-alt-length {
+			text-align: center;
+			color: $ui-fg;
+			font-size: .8em;
+
+			&.campus-a11y-warning {
+				color: $warning;
+				font-weight: bold;
+			}
+		}
+
+		&.campus-a11y-working:before,
+		&.campus-a11y-success:before,
+		&.campus-a11y-failure:before {
+			content: " ";
+			position: absolute;
+			display: block;
+			top: 7px;
+			height: 16px;
+			width: 16px;
+			right: 4px;
+		}
+
+		&.campus-a11y-working:before {
+			animation: bgWorking 1s linear infinite;
+			background: $ui-fg;
+			mask-image: url($icons-loader);
+		}
+
+		&.campus-a11y-failure:before {
+			background: $error;
+			mask-image: url($icons-fail);
+		}
+
+		&.campus-a11y-success:before {
+			background: $success;
+			mask-image: url($icons-check);
+		}
+	}
+
+}
+
+@keyframes bgWorking {
+	100% {
+		transform:rotate(360deg);
+	}
+}
+
+.campus-a11y-admin-settings {
+	.campus-a11y-options {
+		margin-top: 1em;
+
+		label {
+			display: block;
+			margin-bottom: 1em;
+
+			& > span {
+				font-weight: bold;
+			}
+
+			.campus-a11y-description {
+				margin-top: .2em;
+				font-style: italic;
+			}
+		}
+	}
+}

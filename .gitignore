@@ -1,0 +1,6 @@
+logs/
+bin/
+docs/
+node_modules/
+builds/
+dist/

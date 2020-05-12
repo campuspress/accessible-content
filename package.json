@@ -1,0 +1,57 @@
+{
+  "name": "campus-a11y",
+  "version": "1.0.0-beta.4",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "assets/src/sass",
+        "assets/src/js"
+      ],
+      "extensions": "scss,js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "NODE_ENV=development webpack --mode development",
+    "build:prod": "NODE_ENV=production webpack --mode production",
+    "build": "npm run build:dev && npm run build:prod",
+    "watch": "npm-watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/runtime": "^7.9.2",
+    "autoprefixer": "^9.7.6",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
+    "file-loader": "^6.0.0",
+    "node-sass": "^4.13.1",
+    "npm-watch": "^0.6.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "last 2 version",
+    "not dead",
+    "iOS >= 9"
+  ],
+  "dependencies": {
+    "get-contrast": "^2.0.0",
+    "rgb-hex": "^3.0.0"
+  }
+}
