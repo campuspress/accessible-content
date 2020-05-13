@@ -1,21 +1,22 @@
 <?php
 /**
- * Campus Accessibility main plugin file
+ * Accessible Content main plugin file
  *
  * @package campus-a11y
  */
 
 /**
  * Plugin Name: Accessible Content
- * Description: Accessibility content inspector and improvements companion
- * Version: 1.0.0-beta.4
+ * Description: Check your pages and posts for potential accessibility issues and get help with ensuring your content is accessible.
+ * Version: 1.0.0
  * Text Domain: campus-a11y
- * Author: Campus team
+ * Author: CampusPress
+ * Author URI:  https://campuspress.com
  */
 
 namespace Campus\A11y;
 
-define( 'CAMPUS_A11Y_VERSION', '1.0.0-beta.4' );
+define( 'CAMPUS_A11Y_VERSION', '1.0.0' );
 
 define( __NAMESPACE__ . '\PLUGIN_FILE', __FILE__ );
 define( __NAMESPACE__ . '\PLUGIN_DIR', basename( dirname( __FILE__ ) ) );

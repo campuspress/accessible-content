@@ -1,7 +1,7 @@
 Accessible Content Plugin
 ==================================
 
-This plugin augments content edit preview, with accessibility analysis and tips.
+Check your pages and posts for potential accessibility issues and get help with ensuring your content is accessible.
 
 
 Features
