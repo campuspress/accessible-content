@@ -56,6 +56,10 @@ class Admin extends Controller {
 	}
 
 	/**
+	 * Adds menu entry
+	 */
+	public function add_menu_page() {}
+	/**
 	 * Sets up front-end dependencies
 	 */
 	public function add_dependencies() {
