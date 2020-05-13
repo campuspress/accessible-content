@@ -104,7 +104,7 @@ const getMsgsMarkup = ( el, msgs, data ) => {
 		}
 		m.classList.add( clsMsg );
 		m.classList.add( pfx( msg.type ) );
-		m.innerHTML = `<h1 class="${ pfx( 'screenreader' ) }" id="{ pfx( 'dialog-desc' }">${ getString( msg.type ) }</h1><p>${ message }</p>`;
+		m.innerHTML = `<h1 class="${ pfx( 'screenreader' ) }" id="${ pfx( 'dialog-desc' ) }">${ getString( msg.type ) }</h1><p>${ message }</p>`;
 		m.appendChild( getFocusButton( el ) );
 
 		if ( isActionable( msg.msg ) ) {
