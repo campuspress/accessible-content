@@ -158,6 +158,7 @@ const createPreviousIssue = () => {
 		if ( event.stopPropagation ) event.stopPropagation();
 		if ( event.preventDefault ) event.preventDefault();
 		createPopup( previous );
+		popup.get().focus();
 	} );
 	btn.innerText = `Previous Issue`;
 	previousAction.appendChild( btn );
@@ -197,6 +198,7 @@ const createNextIssue = () => {
 		if ( event.stopPropagation ) event.stopPropagation();
 		if ( event.preventDefault ) event.preventDefault();
 		createPopup( next );
+		popup.get().focus();
 	} );
 	btn.innerText = `Next Issue (${ issues.length } left)`;
 	nextAction.appendChild( btn );
@@ -333,6 +335,7 @@ export default root => {
 		} );
 		setTimeout( () => {
 			createPopup( getIssues()[0] );
+			popup.get().focus();
 		}, 100 );
 	}
 	createIgnoredIssuesResetButton();

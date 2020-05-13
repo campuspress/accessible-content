@@ -34,7 +34,7 @@ class Issues extends Messages {
 			'warning' => __( 'Warning', Main::DOMAIN ),
 			'notice' => __( 'Notice', Main::DOMAIN ),
 			'Close' => __( 'Close', Main::DOMAIN ),
-			'See recommendations' => __( 'See recommendations', Main::DOMAIN ),
+			'See Recommendations (opens dialog)' => __( 'See Recommendations', Main::DOMAIN ),
 		];
 	}
 
