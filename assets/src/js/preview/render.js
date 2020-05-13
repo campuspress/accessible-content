@@ -262,7 +262,7 @@ const createPopup = el => {
 		const header = document.createElement( 'h1' );
 		header.innerText = getString( 'Accessibility Checks' );
 		header.classList.add( pfx( 'screenreader' ) );
-		header.setAttribute( 'id', pfx( 'dialog-label' )
+		header.setAttribute( 'id', pfx( 'dialog-label' ) );
 		popup.get().prepend( header );
 
 		popup.get().setAttribute( 'aria-describedby', pfx( 'dialog-desc' ) );
