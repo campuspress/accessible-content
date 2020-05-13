@@ -80,7 +80,7 @@ const getToggleableButton = ( el, msg ) => {
 const getFocusButton = ( el, msg ) => {
 	const btn = document.createElement( 'button' );
 	btn.setAttribute( 'type', 'button' );
-	btn.innerText = getString( 'Show Issue' );
+	btn.innerText = getString( 'Show Issue (jumps to item in content)' );
 	btn.classList.add( pfx( 'screenreader' ) );
 	btn.addEventListener( 'click', e => {
 		if ( e && e.preventDefault ) e.preventDefault();
@@ -307,7 +307,7 @@ const addIssueListener = el => {
 		return false;
 	} );
 	button.classList.add( pfx( 'screenreader' ) );
-	button.innerText = getString( 'See Recommendations' );
+	button.innerText = getString( 'See Recommendations (opens dialog)' );
 	issue.append( button );
 };
 
