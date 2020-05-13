@@ -104,7 +104,7 @@ const getMsgsMarkup = ( el, msgs, data ) => {
 		}
 		m.classList.add( clsMsg );
 		m.classList.add( pfx( msg.type ) );
-		m.innerHTML = `<h1 class="${ pfx( 'screenreader' ) }">${ getString( msg.type ) }</h1><p>${ message }</p>`;
+		m.innerHTML = `<h1 class="${ pfx( 'screenreader' ) }" id="{ pfx( 'dialog-desc' }">${ getString( msg.type ) }</h1><p>${ message }</p>`;
 		m.appendChild( getFocusButton( el ) );
 
 		if ( isActionable( msg.msg ) ) {
@@ -137,7 +137,7 @@ const createPreviousIssue = () => {
 		previousAction = document.createElement( 'div' );
 		previousAction.classList.add( pfx( 'previous-issue' ) ); 
 		previousAction.setAttribute( 'role', 'region' );
-		previousAction.setAttribute( 'aria-label', 'Previous accessibility issue' );
+		previousAction.setAttribute( 'aria-label', 'Previous Accessibility Issue' );
 		body.append( previousAction );
 	}
 	const issues = getIssues();
@@ -173,7 +173,7 @@ const createNextIssue = () => {
 		nextAction = document.createElement( 'div' );
 		nextAction.classList.add( pfx( 'next-issue' ) ); 
 		nextAction.setAttribute( 'role', 'region' );
-		nextAction.setAttribute( 'aria-label', 'Next accessibility issue' );
+		nextAction.setAttribute( 'aria-label', 'Next Accessibility Issue' );
 		body.append( nextAction );
 	}
 	const issues = getIssues();
@@ -222,7 +222,7 @@ const createIgnoredIssuesResetButton = () => {
 		clearIgnores = document.createElement( 'div' );
 		clearIgnores.classList.add( pfx( 'clear-ignores' ) ); 
 		clearIgnores.setAttribute( 'role', 'region' );
-		clearIgnores.setAttribute( 'aria-label', 'Clear ignored issues' );
+		clearIgnores.setAttribute( 'aria-label', 'Clear Ignored Issues' );
 		body.append( clearIgnores );
 	}
 
@@ -234,7 +234,7 @@ const createIgnoredIssuesResetButton = () => {
 			window.location.reload();
 		} );
 	} );
-	btn.innerText = 'Clear ignored issues';
+	btn.innerText = 'Clear Ignored Issues';
 	clearIgnores.appendChild( btn );
 	return btn;
 };
@@ -259,12 +259,8 @@ const createPopup = el => {
 		btn.setAttribute( 'aria-label', getString( 'Close' ) );
 		popup.get().prepend( btn );
 
-		const header = document.createElement( 'h1' );
-		header.innerText = getString( 'Accessibility Issues List' );
-		header.classList.add( pfx( 'screenreader' ) );
-		popup.get().prepend( header );
-
 		popup.get().setAttribute( 'aria-label', getString( 'Accessibility Checks' ) );
+		popup.get().setAttribute( 'aria-describedby', pfx( 'dialog-desc' ) );
 	} else {
 		removePopup();
 	}
@@ -305,7 +301,7 @@ const addIssueListener = el => {
 		return false;
 	} );
 	button.classList.add( pfx( 'screenreader' ) );
-	button.innerText = getString( 'See recommendations' );
+	button.innerText = getString( 'See Recommendations' );
 	issue.append( button );
 };
 
