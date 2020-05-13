@@ -98,8 +98,8 @@ class Admin extends Controller {
 	 * @return array
 	 */
 	public function add_setting_links( $links ) {
-		$settings = network_admin_url(
-			'admin.php?page=' . Main::DOMAIN . '-settings'
+		$settings = admin_url(
+			'options-general.php?page=' . Main::DOMAIN . '-settings'
 		);
 		$mylinks  = array(
 			'<a href="' . esc_url( $settings ) . '">' .
