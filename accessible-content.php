@@ -26,3 +26,17 @@ require_once dirname( __FILE__ ) . '/src/exceptions.php';
 require_once dirname( __FILE__ ) . '/src/loader.php';
 
 add_action( 'init', [ Main::get(), 'boot' ] );
+
+/**
+ * Enables automatic updates from GitHub
+ */
+require_once dirname( __FILE__ ) . '/src/plugin-update-checker/plugin-update-checker.php';
+if ( class_exists( '\Puc_v4_Factory' ) ) {
+	$accessible_content_update_checker = \Puc_v4_Factory::buildUpdateChecker(
+		'https://github.com/campuspress/accessible-content',
+		__FILE__,
+		'accessible-content'
+	);
+
+	$accessible_content_update_checker->getVcsApi()->enableReleaseAssets();
+}
