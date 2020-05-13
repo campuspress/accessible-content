@@ -125,6 +125,19 @@ background: #f3f5f6;
 }
 
 
+.campus-a11y-screenreader {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
 $modalBgZ: 9999998;
 $modalZ: $modalBgZ + 1;
 #campus-a11y-popup {
@@ -143,19 +156,6 @@ $modalZ: $modalBgZ + 1;
 		width: 80%;
 		left: 50%;
 		transform: translateX(-50%)
-	}
-
-	.campus-a11y-screenreader {
-		border: 0;
-		clip: rect(1px, 1px, 1px, 1px);
-		clip-path: inset(50%);
-		height: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
-		word-wrap: normal !important;
 	}
 
 	.campus-a11y-messages {

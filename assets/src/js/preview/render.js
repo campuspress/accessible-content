@@ -287,6 +287,20 @@ const makeCurrent = el => {
 	}
 };
 
+const addIssueListener = el => {
+	const issue = el.closest( `.${ pfx( 'issue' ) }` );
+	const button = document.createElement( 'button' );
+	button.addEventListener( 'click', e => {
+		if ( e.stopPropagation ) e.stopPropagation();
+		if ( e.preventDefault ) e.preventDefault();
+		createPopup( el );
+		return false;
+	} );
+	button.classList.add( pfx( 'screenreader' ) );
+	button.innerText = getString( 'See recommendations' );
+	issue.append( button );
+};
+
 const listen = root => {
 	root.addEventListener( 'click', event => {
 		const msgs = getMsgs( event.target ) || [];
@@ -304,6 +318,9 @@ const listen = root => {
 export default root => {
 	_root = root;
 	if ( hasExistingIssues() ) {
+		getIssues().forEach( el => {
+			addIssueListener( el );
+		} );
 		setTimeout( () => {
 			createPopup( getIssues()[0] );
 		}, 100 );
