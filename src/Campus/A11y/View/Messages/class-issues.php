@@ -28,6 +28,11 @@ class Issues extends Messages {
 			'Edit Alt Text' => __( 'Edit Alt Text', Main::DOMAIN ),
 			'Mark As Decorative' => __( 'Mark As Decorative', Main::DOMAIN ),
 			'Ignore' => __( 'Ignore', Main::DOMAIN ),
+			'Accessibility Checks' => __( 'Accessibility Checks', Main::DOMAIN ),
+			'error' => __( 'Error', Main::DOMAIN ),
+			'warning' => __( 'Warning', Main::DOMAIN ),
+			'notice' => __( 'Notice', Main::DOMAIN ),
+			'Close' => __( 'Close', Main::DOMAIN ),
 		];
 	}
 

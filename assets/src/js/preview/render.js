@@ -104,7 +104,7 @@ const getMsgsMarkup = ( el, msgs, data ) => {
 		}
 		m.classList.add( clsMsg );
 		m.classList.add( pfx( msg.type ) );
-		m.innerHTML = `<p>${ message }</p>`;
+		m.innerHTML = `<h4 class="${ pfx( 'screenreader' ) }">${ getString( msg.type ) }</h4><p>${ message }</p>`;
 		m.appendChild( getFocusButton( el ) );
 
 		if ( isActionable( msg.msg ) ) {
@@ -255,7 +255,9 @@ const createPopup = el => {
 		} );
 		btn.innerHTML = '&times;';
 		btn.classList.add( pfx( 'close' ) );
+		btn.setAttribute( 'aria-label', getString( 'Close' ) );
 		popup.get().appendChild( btn );
+		popup.get().setAttribute( 'aria-label', getString( 'Accessibility Checks' ) );
 	} else {
 		removePopup();
 	}
