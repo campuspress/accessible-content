@@ -294,6 +294,7 @@ const addIssueListener = el => {
 		if ( e.stopPropagation ) e.stopPropagation();
 		if ( e.preventDefault ) e.preventDefault();
 		createPopup( el );
+		popup.get().focus();
 		return false;
 	} );
 	button.classList.add( pfx( 'screenreader' ) );
