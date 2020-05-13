@@ -5,9 +5,18 @@ const getLinks = root => {
 };
 
 const checkLinkText = link => {
-	const text = link.innerText || '';
+	const stopWords = [
+		'click', 'here',
+		'read', 'learn',
+		'more',
+	];
+	const text = ( link.innerText || '' ).toLowerCase().replace( /\s+/, ' ' );
 	const words = text.split( ' ' );
-	if ( words.length <= 2 ) {
+	const lengthThreshold = stopWords.reduce(
+		( prev, word ) => words.indexOf( word ) >= 0 ? 2 : prev,
+		1
+	);
+	if ( words.length <= lengthThreshold ) {
 		output.note( link, 'link_too_short' );
 	}
 };
