@@ -39,6 +39,7 @@ class Issues extends Messages {
 			IssueTypes::PARENT_LIST => __( 'Screen readers require list items to be contained within a parent UL or OL to be announced properly', Main::DOMAIN ),
 			IssueTypes::LINK_TOO_SHORT => __( 'The link text may be too short. Link text should describe where the link will take you.', Main::DOMAIN ),
 			IssueTypes::LINK_NO_TEXT => __( 'This link does not contain any text. All links must include text that describes the purpose of the link.', Main::DOMAIN ),
+			IssueTypes::LINK_EXTERNAL => __( 'This link opens in a new tab or window.', Main::DOMAIN ),
 			IssueTypes::VIDEO_NO_TITLES => __( 'There are no captions or subtitles detected for this video. All videos must include captions or subtitles.', Main::DOMAIN ),
 			IssueTypes::TABLE_NO_DESC => __( 'Tables should have a caption or some row headers, or at least a summary attribute', Main::DOMAIN ),
 			IssueTypes::TABLE_BAD_HEADERS => __( 'Cells in a TABLE element that use the HEADERS attribute must refer to table cells within the same table.', Main::DOMAIN ),

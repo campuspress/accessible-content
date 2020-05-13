@@ -20,6 +20,7 @@ class Issues {
 	const PARENT_LIST = 'parent_list';
 	const LINK_TOO_SHORT = 'link_too_short';
 	const LINK_NO_TEXT = 'link_no_text';
+	const LINK_EXTERNAL = 'link_external';
 	const VIDEO_NO_TITLES = 'video_no_titles';
 	const TABLE_NO_DESC = 'table_no_desc';
 	const TABLE_BAD_HEADERS = 'table_bad_headers';

@@ -23,6 +23,9 @@ const checkLinkText = link => {
 
 const checkAll = root => {
 	getLinks( root ).forEach( link => {
+		if ( '_blank' === link.getAttribute( 'target' ) ) {
+			output.note( link, 'link_external' );
+		}
 		const text = link.innerText;
 		if ( text ) {
 			return checkLinkText( link );
