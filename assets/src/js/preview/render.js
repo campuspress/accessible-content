@@ -104,7 +104,7 @@ const getMsgsMarkup = ( el, msgs, data ) => {
 		}
 		m.classList.add( clsMsg );
 		m.classList.add( pfx( msg.type ) );
-		m.innerHTML = `<h1 class="${ pfx( 'screenreader' ) }" id="${ pfx( 'dialog-desc' ) }">${ getString( msg.type ) }</h1><p>${ message }</p>`;
+		m.innerHTML = `<h2 class="${ pfx( 'screenreader' ) }" id="${ pfx( 'dialog-desc' ) }">${ getString( msg.type ) }</h2><p>${ message }</p>`;
 		m.appendChild( getFocusButton( el ) );
 
 		if ( isActionable( msg.msg ) ) {
@@ -259,8 +259,14 @@ const createPopup = el => {
 		btn.setAttribute( 'aria-label', getString( 'Close' ) );
 		popup.get().prepend( btn );
 
-		popup.get().setAttribute( 'aria-label', getString( 'Accessibility Checks' ) );
+		const header = document.createElement( 'h1' );
+		header.innerText = getString( 'Accessibility Checks' );
+		header.classList.add( pfx( 'screenreader' ) );
+		header.setAttribute( 'id', pfx( 'dialog-label' )
+		popup.get().prepend( header );
+
 		popup.get().setAttribute( 'aria-describedby', pfx( 'dialog-desc' ) );
+		popup.get().setAttribute( 'aria-labelledby', pfx( 'dialog-label' ) );
 	} else {
 		removePopup();
 	}
