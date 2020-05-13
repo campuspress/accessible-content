@@ -247,7 +247,6 @@ const createPopup = el => {
 		popup.createEmpty()
 			.appendChild( getMsgsMarkup( el, msgs, getData( el ) ) );
 		el.scrollIntoView( { block: 'center' } );
-		el.focus();
 		const btn = document.createElement( 'button' );
 		btn.addEventListener( 'click', event => {
 			if ( event.stopPropagation ) event.stopPropagation();
