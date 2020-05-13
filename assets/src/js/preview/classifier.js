@@ -31,6 +31,24 @@ const getWrapperTag = el => {
 		: 'div';
 };
 
+const isFocusableElement = el => {
+	return [
+		'a', 'input', 'button',
+		'textarea', 'form', 'select',
+	].indexOf( el.tagName.toLowerCase() ) >= 0;
+};
+
+const ensureFocusable = el => {
+	if ( isFocusableElement( el ) ) {
+		return el;
+	}
+	if ( el.getAttribute( 'tabindex' ) ) {
+		return el;
+	}
+	el.setAttribute( 'tabindex', -1 );
+	return el;
+};
+
 const wrap = el => {
 	const wrapper = document.createElement( getWrapperTag( el ) );
 	wrapper.classList.add( ISSUE_CLASS );
@@ -47,6 +65,8 @@ const wrap = el => {
 		wrapper.setAttribute( 'aria-details', 'notice' );
 	}
 	wrapper.setAttribute( 'role', 'mark' );
+	
+	ensureFocusable( el );
 	
 	el.parentNode.insertBefore( wrapper, el );
 	wrapper.appendChild( el );
