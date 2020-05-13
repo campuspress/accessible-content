@@ -29,6 +29,7 @@ class Issues extends Messages {
 			'Mark As Decorative' => __( 'Mark As Decorative', Main::DOMAIN ),
 			'Ignore' => __( 'Ignore', Main::DOMAIN ),
 			'Accessibility Checks' => __( 'Accessibility Checks', Main::DOMAIN ),
+			'Accessibility Issues List' => __( 'Accessibility Issues List', Main::DOMAIN ),
 			'error' => __( 'Error', Main::DOMAIN ),
 			'warning' => __( 'Warning', Main::DOMAIN ),
 			'notice' => __( 'Notice', Main::DOMAIN ),

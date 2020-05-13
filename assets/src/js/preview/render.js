@@ -104,7 +104,7 @@ const getMsgsMarkup = ( el, msgs, data ) => {
 		}
 		m.classList.add( clsMsg );
 		m.classList.add( pfx( msg.type ) );
-		m.innerHTML = `<h4 class="${ pfx( 'screenreader' ) }">${ getString( msg.type ) }</h4><p>${ message }</p>`;
+		m.innerHTML = `<h1 class="${ pfx( 'screenreader' ) }">${ getString( msg.type ) }</h1><p>${ message }</p>`;
 		m.appendChild( getFocusButton( el ) );
 
 		if ( isActionable( msg.msg ) ) {
@@ -247,6 +247,7 @@ const createPopup = el => {
 		popup.createEmpty()
 			.appendChild( getMsgsMarkup( el, msgs, getData( el ) ) );
 		el.scrollIntoView( { block: 'center' } );
+
 		const btn = document.createElement( 'button' );
 		btn.addEventListener( 'click', event => {
 			if ( event.stopPropagation ) event.stopPropagation();
@@ -256,7 +257,13 @@ const createPopup = el => {
 		btn.innerHTML = '&times;';
 		btn.classList.add( pfx( 'close' ) );
 		btn.setAttribute( 'aria-label', getString( 'Close' ) );
-		popup.get().appendChild( btn );
+		popup.get().prepend( btn );
+
+		const header = document.createElement( 'h1' );
+		header.innerText = getString( 'Accessibility Issues List' );
+		header.classList.add( pfx( 'screenreader' ) );
+		popup.get().prepend( header );
+
 		popup.get().setAttribute( 'aria-label', getString( 'Accessibility Checks' ) );
 	} else {
 		removePopup();
