@@ -20,6 +20,7 @@ const createEmpty = () => {
 	const el = document.createElement( 'div' );
 	el.setAttribute( 'id', POPUP_ID );
 	el.setAttribute( 'role', 'dialog' );
+	el.setAttribute( 'tabindex', -1 );
 	document.querySelector( 'body' ).appendChild( el );
 	return el;
 };

@@ -166,6 +166,11 @@ $modalZ: $modalBgZ + 1;
 				}
 			}
 
+			.campus-a11y-screenreader {
+				position: absolute;
+				left: -100000000000000000px;
+			}
+
 			a {
 				color: #0073aa;
 				text-decoration: underline;

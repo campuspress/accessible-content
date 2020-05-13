@@ -149,6 +149,9 @@
           display: inline-block;
           margin-right: .5em;
           margin-bottom: .5em; }
+      #campus-a11y-popup .campus-a11y-messages .campus-a11y-message .campus-a11y-screenreader {
+        position: absolute;
+        left: -100000000000000000px; }
       #campus-a11y-popup .campus-a11y-messages .campus-a11y-message a {
         color: #0073aa;
         text-decoration: underline; }

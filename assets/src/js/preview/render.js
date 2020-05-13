@@ -77,6 +77,19 @@ const getToggleableButton = ( el, msg ) => {
 	return btn;
 };
 
+const getFocusButton = ( el, msg ) => {
+	const btn = document.createElement( 'button' );
+	btn.setAttribute( 'type', 'button' );
+	btn.innerText = getString( 'Show Issue' );
+	btn.classList.add( pfx( 'screenreader' ) );
+	btn.addEventListener( 'click', e => {
+		if ( e && e.preventDefault ) e.preventDefault();
+		if ( e && e.stopPropagation ) e.stopPropagation();
+		el.focus();
+	} );
+	return btn;
+};
+
 const getMsgsMarkup = ( el, msgs, data ) => {
 	const clsMsgs = pfx( 'messages' );
 	const clsMsg = pfx( 'message' );
@@ -92,6 +105,7 @@ const getMsgsMarkup = ( el, msgs, data ) => {
 		m.classList.add( clsMsg );
 		m.classList.add( pfx( msg.type ) );
 		m.innerHTML = `<p>${ message }</p>`;
+		m.appendChild( getFocusButton( el ) );
 
 		if ( isActionable( msg.msg ) ) {
 			const wrapper = document.createElement( 'div' );
@@ -233,6 +247,7 @@ const createPopup = el => {
 		popup.createEmpty()
 			.appendChild( getMsgsMarkup( el, msgs, getData( el ) ) );
 		el.scrollIntoView( { block: 'center' } );
+		el.focus();
 		const btn = document.createElement( 'button' );
 		btn.addEventListener( 'click', event => {
 			if ( event.stopPropagation ) event.stopPropagation();
@@ -278,6 +293,7 @@ const listen = root => {
 			if ( event.stopPropagation ) event.stopPropagation();
 			if ( event.preventDefault ) event.preventDefault();
 			createPopup( event.target );
+			popup.get().focus();
 		} else {
 			removePopup();
 		}
