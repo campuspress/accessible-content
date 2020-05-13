@@ -12,7 +12,12 @@ const unlock = () => {
 
 	return true;
 };
-const lock = () => wp.data.dispatch('core/editor').lockPostSaving();
+const lock = () => {
+	// Do not lock already published post.
+	if ( ! wp.data.select( 'core/editor' ).isCurrentPostPublished() ) {
+		wp.data.dispatch('core/editor').lockPostSaving();
+	}
+};
 
 const setPostUnchecked = () => {
 	if ( ! isChecked() ) {
@@ -73,7 +78,6 @@ const boot = () => {
 			lock();
 		}
 	}
-
 	wp.data.subscribe( () => {
 		const data = wp.data.select( 'core/editor' );
 		if ( data.hasChangedContent() && data.isEditedPostDirty() ) {
@@ -88,3 +92,4 @@ export default () => {
 	image.extendCoreImageBlock();
 	setTimeout( boot );
 }
+
