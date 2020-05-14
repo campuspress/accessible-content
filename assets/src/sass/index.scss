@@ -229,6 +229,7 @@ $modalZ: $modalBgZ + 1;
 .campus-a11y-previous-issue,
 .campus-a11y-clear-ignores
 {
+	z-index: $modalBgZ;
 	position: fixed;
 	border: 1px solid $ui-border;
 	top: 50%;

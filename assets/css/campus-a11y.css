@@ -210,6 +210,7 @@
 .campus-a11y-next-issue,
 .campus-a11y-previous-issue,
 .campus-a11y-clear-ignores {
+  z-index: 9999998;
   position: fixed;
   border: 1px solid #ddd;
   top: 50%;
