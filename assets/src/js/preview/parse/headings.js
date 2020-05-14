@@ -1,28 +1,37 @@
 import output from '../output';
 
-const HEADINGS = 'h1,h2,h3,h4,h5,h6';
+const HEADINGS = [ ...Array(6) ].map( ( j,k ) => `h${ k + 1 }` );
 
-const getHeadings = root => ( root || document ).querySelectorAll( HEADINGS );
+const getHeadings = root => ( root || document ).querySelectorAll(
+	HEADINGS.join( ',' )
+);
 
 const parseLevels = root => {
 	return Array.prototype.reduce.call(
 		getHeadings( root ),
 		( prev, tag ) => ( {
 			... prev,
-			[ tag.tagName ]: ( prev[ tag.tagName ] || 0 ) + 1
+			[ ( tag.tagName || '' ).toLowerCase() ]: ( prev[ tag.tagName ] || 0 ) + 1
 		} ), {}
 	);
 };
 
 const checkLevels = root => {
 	const levels = parseLevels( root );
-	const hasLevel = lvl => Object.keys( levels ).indexOf( `H${ lvl }` ) >= 0;
+	const hasLevel = lvl => Object.keys( levels ).indexOf( `h${ lvl }` ) >= 0;
 	const hasPreviousLevels = lvl => [...Array( lvl ).keys() ].filter(
 		idx => hasLevel( idx+1 )
 	).length;
+	const hasRootH1 = document.querySelector( 'h1' );
 	const nonConsecutive = Object.keys( levels ).filter( tag => {
 		const lvl = parseInt( ( tag || '' ).replace( /^h/i, '' ), 10 );
+		// H1s are OK.
 		if ( lvl < 2 ) return false;
+
+		// Allow H2s if there's a H1 anywhere in document context.
+		if ( lvl === 2 ) return ! hasRootH1;
+
+		// Otherwise, actually do check previous levels.
 		return hasLevel( lvl - 1 )
 			? false
 			: hasPreviousLevels( lvl );
