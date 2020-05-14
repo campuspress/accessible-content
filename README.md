@@ -1,7 +1,7 @@
 Accessible Content Plugin
 ==================================
 
-Adds an Accessibiilty Checker to the WordPress page/post preview. The checker identifies potential accessibility issues and provides guidance on host to improve. 
+Adds an Accessibilty Checker to the WordPress page/post preview. The checker identifies potential accessibility issues and provides guidance on host to improve. 
 
 Features
 --------
