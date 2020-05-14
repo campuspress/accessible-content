@@ -59,13 +59,33 @@ class Preview extends Controller {
 		if ( ! current_user_can( 'edit_post', get_post()->ID ) ) {
 			return false;
 		}
+
+		$preview_link = $this->get_preview_link();
+
 		$bar->add_menu( [
 			'id' => Main::DOMAIN,
 			'parent' => null,
 			'group' => null,
 			'title' => __( 'Accessibility Review', Main::DOMAIN ),
-			'href' => get_preview_post_link( get_post() ),
+			'href' => esc_url( $preview_link ),
 		] );
+	}
+
+	/**
+	 * Returns post preview link for the current post
+	 *
+	 * @return string
+	 */
+	public function get_preview_link() {
+		$post = get_post();
+		$args = [];
+		if ( is_front_page() ) {
+			$args = [
+				'preview_id' => $post->ID,
+				'preview_nonce' => wp_create_nonce( 'post_preview_' . $post->ID ),
+			];
+		}
+		return get_preview_post_link( $post->ID, $args );
 	}
 
 	public function add_editor_decorative_role( $html, $attachment_id ) {
