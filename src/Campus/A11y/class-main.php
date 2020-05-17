@@ -22,6 +22,8 @@ class Main extends Controller {
 			return false;
 		}
 
+		$this->load_translations();
+
 		Controller\Preview::get()->boot();
 
 		if ( is_admin() ) {
@@ -34,6 +36,18 @@ class Main extends Controller {
 		} else {
 			Controller\Content::get()->boot();
 		}
+	}
+
+	/**
+	 * Loads the plugin translations
+	 */
+	public function load_translations() {
+		$dirname  = Model\Constants\Plugin::get()->get_value( 'PLUGIN_DIR' );
+		load_plugin_textdomain(
+			'campus-a11y',
+			false,
+			trailingslashit( $dirname ) . 'languages'
+		);
 	}
 
 	/**
