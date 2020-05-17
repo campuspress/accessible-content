@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Accessible Content 1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/accessible-content\n"
-"POT-Creation-Date: 2020-05-17 02:15:21+00:00\n"
+"POT-Creation-Date: 2020-05-17 02:34:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -273,26 +273,6 @@ msgstr ""
 msgid "<span>%d</span> character(s)"
 msgstr ""
 
-#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:54
-msgid "View details"
-msgstr ""
-
-#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:77
-msgid "More information about %s"
-msgstr ""
-
-#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:128
-msgid "Check for updates"
-msgstr ""
-
-#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:223
-msgid "Unknown update checker status \"%s\""
-msgstr ""
-
-#: src/plugin-update-checker/Puc/v4p9/Vcs/PluginUpdateChecker.php:98
-msgid "There is no changelog available."
-msgstr ""
-
 #: tpl/media/page.php:14
 msgid "Media"
 msgstr ""
@@ -349,19 +329,4 @@ msgstr ""
 #: src/Campus/A11y/Controller/Admin/class-settings.php:29
 msgctxt "menu label"
 msgid "Accessibility"
-msgstr ""
-
-#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:213
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr ""
-
-#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:215
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr ""
-
-#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:217
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
 msgstr ""
