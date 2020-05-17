@@ -97,7 +97,7 @@ class Preview extends Controller {
 			return $html;
 		}
 
-		// Hack through gutenberg attribute insantity.
+		// Hack through gutenberg attribute insanity.
 		if ( ! empty( $block['attrs']['role'] ) ) {
 			return $this->make_decorative(
 				preg_replace( '/role="presentation"/', '', $html )

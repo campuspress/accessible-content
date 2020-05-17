@@ -16,7 +16,7 @@ class Controller_Content_Test extends Test\UnitTestCase {
 		$ctrl = Controller\Content::get();
 		$this->assertTrue(
 			$ctrl instanceof Controller,
-			'should be a singleton'
+			'should be a controller'
 		);
 		$this->assertTrue(
 			$ctrl instanceof Singleton,
