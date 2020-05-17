@@ -18,6 +18,7 @@
 			<exclude>
 				<directory suffix=".php">./tests/</directory>
 				<directory suffix=".php">./tpl/</directory>
+				<directory suffix=".php">./src/plugin-update-checker/</directory>
 			</exclude>
 		</whitelist>
 	</filter>
