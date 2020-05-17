@@ -1,0 +1,367 @@
+# Copyright (C) 2020 CampusPress
+# This file is distributed under the same license as the Accessible Content package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Accessible Content 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/accessible-content\n"
+"POT-Creation-Date: 2020-05-17 02:15:21+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: node-wp-i18n 1.2.3\n"
+
+#: src/Campus/A11y/Controller/class-admin.php:106
+msgid "Settings"
+msgstr ""
+
+#: src/Campus/A11y/Controller/class-preview.php:69
+msgid "Accessibility Review"
+msgstr ""
+
+#: src/Campus/A11y/Model/Assets/class-editor.php:22
+msgid "Accessibility Checklist"
+msgstr ""
+
+#: src/Campus/A11y/Model/Assets/class-editor.php:23
+msgid "Make sure you previewed your post for any a11y issues"
+msgstr ""
+
+#: src/Campus/A11y/Model/Assets/class-editor.php:24
+#: src/Campus/A11y/View/class-table.php:254
+msgid "This is a decorative image"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:28
+msgid "Edit Alt Text"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:29
+msgid "Mark As Decorative"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:30
+msgid "Ignore"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:31
+msgid "Accessibility Checks"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:32
+msgid "Accessibility Issues List"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:33
+msgid "Error"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:34
+msgid "Warning"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:35
+msgid "Notice"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:36
+msgid "Close"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:37
+msgid "See Recommendations (opens dialog)"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:43
+msgid ""
+"The value of an id attribute must be unique to prevent other instances from "
+"being overlooked by assistive technologies (####id###)"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:44
+msgid ""
+"This links to a PDF file. PDF files may not be accessible, so please check "
+"to ensure that this one is. For example, can you highlight any text on the "
+"PDF? Do images include alt text?"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:45
+msgid "Only LI elements can be direct descendents of UL and OL elements"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:46
+msgid ""
+"Screen readers require list items to be contained within a parent UL or OL "
+"to be announced properly"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:47
+msgid ""
+"The link text may be too short. Link text should describe where the link "
+"will take you."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:48
+msgid ""
+"This link does not contain any text. All links must include text that "
+"describes the purpose of the link."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:49
+msgid "This link opens in a new tab or window."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:50
+msgid ""
+"There are no captions or subtitles detected for this video. All videos must "
+"include captions or subtitles."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:51
+msgid ""
+"Tables should have a caption or some row headers, or at least a summary "
+"attribute"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:52
+msgid ""
+"Cells in a TABLE element that use the HEADERS attribute must refer to table "
+"cells within the same table."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:53
+msgid "All FRAME and IFRAME elements must have title attribute"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:54
+msgid "This form element is missing a label."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:55
+msgid ""
+"This label does not seem to describe any element and will be confusing for "
+"those using screen readers."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:56
+msgid "This label is empty. Please add descriptive text to the label."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:57
+msgid ""
+"The alt text for this image is too long. Screen readers may not read more "
+"than 125 characters, so you should shorten this text."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:58
+msgid ""
+"This alt text is too short and does not fully describe the image. If there "
+"are words on the image, the alt text should include those words. <a "
+"href=\"https://webaim.org/techniques/alttext/#basics\" "
+"target=\"_blank\">Learn more about alt text here.</a>"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:59
+msgid ""
+"This image does not have alt text. This is ok if this image is decorative "
+"only. If there are words on the image, the alt text should include those "
+"words. <a href=\"https://webaim.org/techniques/alttext/#decorative\" "
+"target=\"_blank\">Here is more on how to decide if an image is "
+"decorative.</a>"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:60
+msgid ""
+"There is not enough contrast here between the text (####fg###) and the "
+"background (####bg###). <a "
+"href=\"https://webaim.org/resources/contrastchecker/?fcolor=###fg###&"
+"bcolor=###bg###\" target=\"_blank\">See contrast checker here.</a>"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:61
+msgid ""
+"There may not be enough contrast here between the text (####fg###) and the "
+"background (####bg###). <a "
+"href=\"https://webaim.org/resources/contrastchecker/?fcolor=###fg###&"
+"bcolor=###bg###\" target=\"_blank\">See contrast checker here.</a>"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:62
+msgid ""
+"There are skipped Heading tags (ie. H2 and H4 are both used, but not H3) "
+"which makes it much harder for visitors with screen readers to navigate "
+"this page. Please review headings to make sure none are skipped."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:63
+msgid ""
+"There are multiple H1 heading tags on this page. A page should not have "
+"more than one H1 heading in use."
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:64
+msgid ""
+"There is an H1 heading tag in the content, but there is already an H1 tag "
+"added by the theme as the page/post title. Please change the content H1 to "
+"an H2."
+msgstr ""
+
+#: src/Campus/A11y/View/class-messages.php:32
+msgid "Something went wrong."
+msgstr ""
+
+#: src/Campus/A11y/View/class-messages.php:33
+msgid "Required argument missing."
+msgstr ""
+
+#: src/Campus/A11y/View/class-messages.php:34
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:51
+msgid "Image"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:52
+msgid "Attached to"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:53
+msgid "Alt"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:59
+msgid "Images with no alt text"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:60
+msgid "Images with alt text"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:61
+msgid "Images with non descriptive alts"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:62
+msgid "Decorative images only"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:63
+msgid "All Images"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:211
+msgid "%s ago"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:212
+msgid "Y/m/d"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:216
+msgid "Y/m/d g:i:s a"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:223
+msgid "%s, by %s"
+msgstr ""
+
+#: src/Campus/A11y/View/class-table.php:243
+msgid "<span>%d</span> character(s)"
+msgstr ""
+
+#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:54
+msgid "View details"
+msgstr ""
+
+#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:77
+msgid "More information about %s"
+msgstr ""
+
+#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr ""
+
+#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:223
+msgid "Unknown update checker status \"%s\""
+msgstr ""
+
+#: src/plugin-update-checker/Puc/v4p9/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr ""
+
+#: tpl/media/page.php:14
+msgid "Media"
+msgstr ""
+
+#: tpl/settings/page.php:19
+msgid "Accessibility Settings"
+msgstr ""
+
+#: tpl/settings/page.php:41
+msgid "Allow frontend replacement?"
+msgstr ""
+
+#: tpl/settings/page.php:43
+msgid "Enabling this will add fallback alt tags for all the images that have them."
+msgstr ""
+
+#: tpl/settings/page.php:49
+msgid "Save"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Accessible Content"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Check your pages and posts for potential accessibility issues and get help "
+"with ensuring your content is accessible."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "CampusPress"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://campuspress.com"
+msgstr ""
+
+#: src/Campus/A11y/Controller/Admin/class-media.php:27
+msgctxt "page label"
+msgid "Alt Text"
+msgstr ""
+
+#: src/Campus/A11y/Controller/Admin/class-settings.php:28
+msgctxt "page label"
+msgid "Accessibility"
+msgstr ""
+
+#: src/Campus/A11y/Controller/Admin/class-media.php:28
+msgctxt "menu label"
+msgid "Alt Text"
+msgstr ""
+
+#: src/Campus/A11y/Controller/Admin/class-settings.php:29
+msgctxt "menu label"
+msgid "Accessibility"
+msgstr ""
+
+#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:213
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr ""
+
+#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:215
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr ""
+
+#: src/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:217
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr ""

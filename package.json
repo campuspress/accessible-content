@@ -20,6 +20,8 @@
     "build:dev": "NODE_ENV=development webpack --mode development",
     "build:prod": "NODE_ENV=production webpack --mode production",
     "build": "npm run build:dev && npm run build:prod",
+	"i18n": "wpi18n makepot --domain-path=languages",
+	"release": "npm run build && npm run i18n",
     "watch": "npm-watch"
   },
   "keywords": [],
@@ -34,6 +36,7 @@
     "core-js": "^3.6.5",
     "file-loader": "^6.0.0",
     "node-sass": "^4.13.1",
+    "node-wp-i18n": "^1.2.3",
     "npm-watch": "^0.6.0",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
