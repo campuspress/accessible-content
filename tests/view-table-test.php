@@ -91,4 +91,42 @@ class View_Table_Test extends Test\Admin\UnitTestCase {
 		$this->assertNotEquals( $default, $withalt, "two queries should be different" );
 		unset( $_GET['type'] );
 	}
+
+	public function test_column_image_returns_image_tag() {
+		$table = new View\Table();
+		add_filter( 'wp_get_attachment_image_src', [ $this, 'get_random_url' ] );
+		$field = $table->column_image( $this->get_fake_image() );
+		remove_filter( 'wp_get_attachment_image_src', [ $this, 'get_random_url' ] );
+
+		$this->assertTrue(
+			(bool) preg_match( '/<img /', $field ),
+			'field has image tag'
+		);
+	}
+
+	public function test_column_post_returns_link_tag() {
+		$table = new View\Table();
+		$field = $table->column_post( $this->get_fake_image() );
+
+		$this->assertTrue(
+			(bool) preg_match( '/<a /', $field ),
+			'field has link tag'
+		);
+	}
+
+	public function get_fake_image() {
+		$post_parent = $this->factory->post->create_and_get([
+			'post_title' => 'Test Post',
+		]);
+		$post = $this->factory->post->create_and_get([
+			'post_title' => 'Test Attachment',
+			'post_type' => 'attachment',
+			'post_parent' => $post_parent->ID,
+		]);
+		return $post;
+	}
+
+	public function get_random_url() {
+		return '//example.com/image.jpg';
+	}
 }
