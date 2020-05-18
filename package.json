@@ -16,12 +16,12 @@
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint assets/src",
     "build:dev": "NODE_ENV=development webpack --mode development",
     "build:prod": "NODE_ENV=production webpack --mode production",
     "build": "npm run build:dev && npm run build:prod",
     "i18n": "wpi18n makepot --domain-path=languages --exclude=src/plugin-update-checker",
-    "release": "npm run build && npm run i18n",
+    "release": "npm run test && npm run build && npm run i18n",
     "watch": "npm-watch"
   },
   "keywords": [],
