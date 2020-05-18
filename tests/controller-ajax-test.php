@@ -67,12 +67,117 @@ class Controller_Ajax_Test extends Test\Admin\UnitTestCase {
 		$post = $this->factory->post->create_and_get([
 			"post_title" => "Test Post"
 		]);
+		$test = [ 'node_id' => [ 'test1', 'test2' ] ];
+
 		$this->mock_post( 'post_id', $post->ID );
-		$this->mock_post( 'ignore', [] );
+		$this->mock_post( 'ignore', $test );
+
 		$user_id = $this->mock_current_user( 'administrator' );
-		$this->should_be_success( [ $ctrl, 'update_ignores' ] );
+		$data = $this->should_be_success( [ $ctrl, 'update_ignores' ] );
 		$this->reset_user();
+
+		$this->assertEquals(
+			$data['data'], $test,
+			'response has the proper data set: ' . json_encode( $data )
+		);
 	}
+
+	public function test_update_alt_rejects_with_missing_post_id() {
+		$ctrl = Controller\Ajax::get();
+		$this->should_be_failure( [ $ctrl, 'update_alt' ] );
+	}
+
+	public function test_update_alt_rejects_with_invalid_post_id() {
+		$ctrl = Controller\Ajax::get();
+		$this->mock_post( 'post_id', 'whatever' );
+		$this->should_be_failure( [ $ctrl, 'update_alt' ] );
+	}
+
+	public function test_update_alt_rejects_with_valid_post_id_noauth() {
+		$ctrl = Controller\Ajax::get();
+		$this->mock_post( 'post_id', 1312 );
+		$this->should_be_failure( [ $ctrl, 'update_alt' ] );
+	}
+
+	public function test_update_alt_succeeds_with_valid_post_id_auth() {
+		$ctrl = Controller\Ajax::get();
+		$post = $this->factory->post->create_and_get([
+			'post_title' => 'Test Post',
+			'post_type' => 'attachment',
+		]);
+		$test = 'this is my test alt';
+
+		$this->mock_post( 'post_id', $post->ID );
+		$this->mock_post( 'alt', $test );
+
+		$user_id = $this->mock_current_user( 'administrator' );
+		$data = $this->should_be_success( [ $ctrl, 'update_alt' ] );
+		$this->reset_user();
+
+		$attachment = new Model\Attachment( $post->ID );
+		$this->assertEquals(
+			$attachment->get_alt(), $test,
+			'attachment alt should be properly set'
+		);
+	}
+
+	public function test_update_decorative_rejects_with_missing_post_id() {
+		$ctrl = Controller\Ajax::get();
+		$this->should_be_failure( [ $ctrl, 'update_decorative' ] );
+	}
+
+	public function test_update_decorative_rejects_with_invalid_post_id() {
+		$ctrl = Controller\Ajax::get();
+		$this->mock_post( 'post_id', 'whatever' );
+		$this->should_be_failure( [ $ctrl, 'update_decorative' ] );
+	}
+
+	public function test_update_decorative_rejects_with_valid_post_id_noauth() {
+		$ctrl = Controller\Ajax::get();
+		$this->mock_post( 'post_id', 1312 );
+		$this->should_be_failure( [ $ctrl, 'update_decorative' ] );
+	}
+
+	public function test_update_decorative_succeeds_with_valid_post_id_auth() {
+		$ctrl = Controller\Ajax::get();
+		$post = $this->factory->post->create_and_get([
+			'post_title' => 'Test Post',
+			'post_type' => 'attachment',
+		]);
+
+		$attachment = new Model\Attachment( $post->ID );
+		$this->assertFalse(
+			$attachment->is_decorative(),
+			'attachment should not be decorative by default'
+		);
+
+		$this->mock_post( 'post_id', $post->ID );
+		$this->mock_post( 'is_decorative', true );
+
+		$user_id = $this->mock_current_user( 'administrator' );
+		$data = $this->should_be_success( [ $ctrl, 'update_decorative' ] );
+		$this->reset_user();
+
+		$attachment = new Model\Attachment( $post->ID );
+		$this->assertTrue(
+			$attachment->is_decorative(),
+			'attachment should now be decorative'
+		);
+
+		$this->mock_post( 'post_id', $post->ID );
+		$this->mock_post( 'is_decorative', false );
+
+		$user_id = $this->mock_current_user( 'administrator' );
+		$data = $this->should_be_success( [ $ctrl, 'update_decorative' ] );
+		$this->reset_user();
+
+		$attachment = new Model\Attachment( $post->ID );
+		$this->assertFalse(
+			$attachment->is_decorative(),
+			'attachment should not be decorative anymore'
+		);
+	}
+
 
 	public function get_response( $callable ) {
 		ob_clean();
@@ -103,6 +208,7 @@ class Controller_Ajax_Test extends Test\Admin\UnitTestCase {
 			$data['success'],
 			'success response should be successful'
 		);
+		return $data;
 	}
 
 	public function should_be_failure( $callable ) {
@@ -111,6 +217,7 @@ class Controller_Ajax_Test extends Test\Admin\UnitTestCase {
 			$data['success'],
 			'failure response should not be successful, duh'
 		);
+		return $data;
 	}
 
 	public function mock_ajax() {
