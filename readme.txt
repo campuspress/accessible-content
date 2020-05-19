@@ -18,6 +18,7 @@ Adds an Accessibility Checker to the WordPress page/post preview. The checker id
 * Fix the preview link for the static home page
 * Fix consecutive header levels detection to include document context
 * Fix z-index for non-dialog ui areas
+* Add l10n support
  
 = 1.0 =
 * Front-end accessibility improvements
