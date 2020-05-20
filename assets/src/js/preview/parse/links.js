@@ -21,13 +21,40 @@ const checkLinkText = link => {
 	}
 };
 
+const checkEmptyLink = link => {
+	if ( ( link.innerHTML || '' ).replace( /\s/g, '' ) ) {
+		return
+	}
+	// Has no inner html.
+	link.innerText = '[ERROR]';
+	output.err( link, 'link_no_text' );
+};
+
+const checkExternalLink = link => {
+	if ( '_blank' !== link.getAttribute( 'target' ) ) {
+		// Not declaratively external link.
+		return;
+	}
+	const indicators = [
+		'external', 'window',
+		'tab', 'new',
+	];
+	const words = ( link.innerText || '' ).split( ' ' );
+	const hasIndicator = indicators.reduce(
+		( prev, indicator ) => words.indexOf( indicator ) >= 0 ? 1 : prev,
+		0
+	);
+	if ( ! hasIndicator ) {
+		output.note( link, 'link_external' );
+	}
+};
+
 const checkAll = root => {
 	getLinks( root ).forEach( link => {
-		if ( '_blank' === link.getAttribute( 'target' ) ) {
-			output.note( link, 'link_external' );
-		}
-		const text = link.innerText;
-		if ( text ) {
+		checkExternalLink( link );
+
+		if ( ( link.innerText || '' ).replace( /\s/g, '' ) ) {
+			// Has *some* non-whitespace inner text.
 			return checkLinkText( link );
 		}
 		link.innerText = '[ERROR]';
