@@ -57,8 +57,8 @@ const checkAll = root => {
 			// Has *some* non-whitespace inner text.
 			return checkLinkText( link );
 		}
-		link.innerText = '[ERROR]';
-		output.err( link, 'link_no_text' );
+
+		checkEmptyLink( link );
 	} );
 };
 
