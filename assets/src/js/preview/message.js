@@ -1,3 +1,6 @@
+const COLLECTION_EXTERNALS = 'external_indicators';
+const COLLECTION_STOPWORDS = 'link_stopwords';
+
 const IGNORABLE = ( window.campus_a11y_insights || {} ).ignorable || [];
 const QUERYABLE = ( window.campus_a11y_insights || {} ).queryable || [];
 const TOGGLEABLE = ( window.campus_a11y_insights || {} ).toggleable || [];
@@ -20,6 +23,13 @@ const getMessageString = ( msg, data ) => {
 	return data ? expand( strings[ msg ], data ) : strings[ msg ];
 };
 
+const getStringCollection = str => {
+	return ( ( getMessageString( str ) || '' ).split( ',' ) || [] )
+		.map( item => item.replace( /^\s*$/, '' ) )
+		.map( item => item.replace( /\W/g, '' ) )
+		.filter( Boolean );
+};
+
 export default {
 	TYPE_WARNING: 'warning',
 	TYPE_ERROR: 'error',
@@ -33,5 +43,7 @@ export default {
 
 	create: ( type, msg ) => ( { type, msg } ),
 	getMessageString,
-	getString: ( str, data ) => getMessageString( str, data ) || str
+	getString: ( str, data ) => getMessageString( str, data ) || str,
+	getExternalIndicators: () => getStringCollection( COLLECTION_EXTERNALS ),
+	getStopWords: () => getStringCollection( COLLECTION_STOPWORDS ),
 };

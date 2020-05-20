@@ -1,15 +1,21 @@
 import output from '../output';
 
+import _message from '../message';
+const { getExternalIndicators, getStopWords } = _message;
+
 const getLinks = root => {
 	return ( root || document ).querySelectorAll( 'a' ) || [];
 };
 
 const checkLinkText = link => {
-	const stopWords = [
-		'click', 'here',
-		'read', 'learn',
-		'more', 'link',
-	];
+	let stopWords = getStopWords();
+	if ( ! stopWords.length ) {
+		stopWords = [
+			'click', 'here',
+			'read', 'learn',
+			'more', 'link',
+		];
+	}
 	const text = ( link.innerText || '' ).toLowerCase().replace( /\s+/, ' ' );
 	const words = text.split( ' ' );
 	const lengthThreshold = stopWords.reduce(
@@ -35,11 +41,16 @@ const checkExternalLink = link => {
 		// Not declaratively external link.
 		return;
 	}
-	const indicators = [
-		'external', 'window',
-		'tab', 'new',
-	];
-	const words = ( link.innerText || '' ).split( ' ' );
+	let indicators = getExternalIndicators();
+	if ( ! indicators.length ) {
+		indicators = [
+			'external', 'window',
+			'tab', 'new',
+		];
+	}
+	const words = ( ( link.innerText || '' ).split( ' ' ) || [] ).map(
+		word => word.replace( /\W/g, '' )
+	);
 	const hasIndicator = indicators.reduce(
 		( prev, indicator ) => words.indexOf( indicator ) >= 0 ? 1 : prev,
 		0

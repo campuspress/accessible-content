@@ -19,8 +19,16 @@ class Issues extends Messages {
 	public function get_messages() {
 		return array_merge(
 			$this->get_issue_titles(),
-			$this->get_ui_strings()
+			$this->get_ui_strings(),
+			$this->get_word_collections()
 		);
+	}
+
+	public function get_word_collections() {
+		return [
+			'external_indicators' => __( 'external,window,tab,new', Main::DOMAIN ),
+			'link_stopwords' => __( 'click,here,read,learn,more,link', Main::DOMAIN ),
+		];
 	}
 
 	public function get_ui_strings() {
