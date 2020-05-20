@@ -8,7 +8,7 @@ const checkLinkText = link => {
 	const stopWords = [
 		'click', 'here',
 		'read', 'learn',
-		'more',
+		'more', 'link',
 	];
 	const text = ( link.innerText || '' ).toLowerCase().replace( /\s+/, ' ' );
 	const words = text.split( ' ' );
