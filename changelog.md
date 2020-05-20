@@ -4,6 +4,8 @@
 - Fix consecutive header levels detection to include document context
 - Fix z-index for non-dialog ui areas
 - Add l10n support
+- Improve external link checking
+- Fix empty link checking
 
 1.0.0
 ----------------------------------------
