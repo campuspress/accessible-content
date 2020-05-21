@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Accessible Content package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Accessible Content 1.0.0\n"
+"Project-Id-Version: Accessible Content 1.0.1\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/accessible-content\n"
-"POT-Creation-Date: 2020-05-17 02:34:00+00:00\n"
+"POT-Creation-Date: 2020-05-21 05:58:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,128 +35,136 @@ msgstr ""
 msgid "This is a decorative image"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:28
-msgid "Edit Alt Text"
-msgstr ""
-
 #: src/Campus/A11y/View/Messages/class-issues.php:29
-msgid "Mark As Decorative"
+msgid "external,window,tab,new"
 msgstr ""
 
 #: src/Campus/A11y/View/Messages/class-issues.php:30
-msgid "Ignore"
-msgstr ""
-
-#: src/Campus/A11y/View/Messages/class-issues.php:31
-msgid "Accessibility Checks"
-msgstr ""
-
-#: src/Campus/A11y/View/Messages/class-issues.php:32
-msgid "Accessibility Issues List"
-msgstr ""
-
-#: src/Campus/A11y/View/Messages/class-issues.php:33
-msgid "Error"
-msgstr ""
-
-#: src/Campus/A11y/View/Messages/class-issues.php:34
-msgid "Warning"
-msgstr ""
-
-#: src/Campus/A11y/View/Messages/class-issues.php:35
-msgid "Notice"
+msgid "click,here,read,learn,more,link"
 msgstr ""
 
 #: src/Campus/A11y/View/Messages/class-issues.php:36
-msgid "Close"
+msgid "Edit Alt Text"
 msgstr ""
 
 #: src/Campus/A11y/View/Messages/class-issues.php:37
-msgid "See Recommendations (opens dialog)"
+msgid "Mark As Decorative"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:38
+msgid "Ignore"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:39
+msgid "Accessibility Checks"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:40
+msgid "Accessibility Issues List"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:41
+msgid "Error"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:42
+msgid "Warning"
 msgstr ""
 
 #: src/Campus/A11y/View/Messages/class-issues.php:43
+msgid "Notice"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:44
+msgid "Close"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:45
+msgid "See Recommendations (opens dialog)"
+msgstr ""
+
+#: src/Campus/A11y/View/Messages/class-issues.php:51
 msgid ""
 "The value of an id attribute must be unique to prevent other instances from "
 "being overlooked by assistive technologies (####id###)"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:44
+#: src/Campus/A11y/View/Messages/class-issues.php:52
 msgid ""
 "This links to a PDF file. PDF files may not be accessible, so please check "
 "to ensure that this one is. For example, can you highlight any text on the "
 "PDF? Do images include alt text?"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:45
+#: src/Campus/A11y/View/Messages/class-issues.php:53
 msgid "Only LI elements can be direct descendents of UL and OL elements"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:46
+#: src/Campus/A11y/View/Messages/class-issues.php:54
 msgid ""
 "Screen readers require list items to be contained within a parent UL or OL "
 "to be announced properly"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:47
+#: src/Campus/A11y/View/Messages/class-issues.php:55
 msgid ""
 "The link text may be too short. Link text should describe where the link "
 "will take you."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:48
+#: src/Campus/A11y/View/Messages/class-issues.php:56
 msgid ""
 "This link does not contain any text. All links must include text that "
 "describes the purpose of the link."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:49
+#: src/Campus/A11y/View/Messages/class-issues.php:57
 msgid "This link opens in a new tab or window."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:50
+#: src/Campus/A11y/View/Messages/class-issues.php:58
 msgid ""
 "There are no captions or subtitles detected for this video. All videos must "
 "include captions or subtitles."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:51
+#: src/Campus/A11y/View/Messages/class-issues.php:59
 msgid ""
 "Tables should have a caption or some row headers, or at least a summary "
 "attribute"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:52
+#: src/Campus/A11y/View/Messages/class-issues.php:60
 msgid ""
 "Cells in a TABLE element that use the HEADERS attribute must refer to table "
 "cells within the same table."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:53
+#: src/Campus/A11y/View/Messages/class-issues.php:61
 msgid "All FRAME and IFRAME elements must have title attribute"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:54
+#: src/Campus/A11y/View/Messages/class-issues.php:62
 msgid "This form element is missing a label."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:55
+#: src/Campus/A11y/View/Messages/class-issues.php:63
 msgid ""
 "This label does not seem to describe any element and will be confusing for "
 "those using screen readers."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:56
+#: src/Campus/A11y/View/Messages/class-issues.php:64
 msgid "This label is empty. Please add descriptive text to the label."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:57
+#: src/Campus/A11y/View/Messages/class-issues.php:65
 msgid ""
 "The alt text for this image is too long. Screen readers may not read more "
 "than 125 characters, so you should shorten this text."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:58
+#: src/Campus/A11y/View/Messages/class-issues.php:66
 msgid ""
 "This alt text is too short and does not fully describe the image. If there "
 "are words on the image, the alt text should include those words. <a "
@@ -164,7 +172,7 @@ msgid ""
 "target=\"_blank\">Learn more about alt text here.</a>"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:59
+#: src/Campus/A11y/View/Messages/class-issues.php:67
 msgid ""
 "This image does not have alt text. This is ok if this image is decorative "
 "only. If there are words on the image, the alt text should include those "
@@ -173,7 +181,7 @@ msgid ""
 "decorative.</a>"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:60
+#: src/Campus/A11y/View/Messages/class-issues.php:68
 msgid ""
 "There is not enough contrast here between the text (####fg###) and the "
 "background (####bg###). <a "
@@ -181,7 +189,7 @@ msgid ""
 "bcolor=###bg###\" target=\"_blank\">See contrast checker here.</a>"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:61
+#: src/Campus/A11y/View/Messages/class-issues.php:69
 msgid ""
 "There may not be enough contrast here between the text (####fg###) and the "
 "background (####bg###). <a "
@@ -189,20 +197,20 @@ msgid ""
 "bcolor=###bg###\" target=\"_blank\">See contrast checker here.</a>"
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:62
+#: src/Campus/A11y/View/Messages/class-issues.php:70
 msgid ""
 "There are skipped Heading tags (ie. H2 and H4 are both used, but not H3) "
 "which makes it much harder for visitors with screen readers to navigate "
 "this page. Please review headings to make sure none are skipped."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:63
+#: src/Campus/A11y/View/Messages/class-issues.php:71
 msgid ""
 "There are multiple H1 heading tags on this page. A page should not have "
 "more than one H1 heading in use."
 msgstr ""
 
-#: src/Campus/A11y/View/Messages/class-issues.php:64
+#: src/Campus/A11y/View/Messages/class-issues.php:72
 msgid ""
 "There is an H1 heading tag in the content, but there is already an H1 tag "
 "added by the theme as the page/post title. Please change the content H1 to "
