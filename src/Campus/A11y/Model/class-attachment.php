@@ -38,14 +38,16 @@ class Attachment {
 	 */
 	static public function from_url( $url ) {
 		$attachment_id = 0;
-		$home          = home_url();
+		$home          = self::get_clean_url( home_url() );
+		$clean_url     = self::get_clean_url( $url );
 
-		if ( strpos( $url, $home ) === false ) {
+		if ( strpos( $clean_url, $home ) === false ) {
 			return new self;
 		}
 
-		$dir = wp_upload_dir();
-		if ( false === strpos( $url, $dir['baseurl'] . '/' ) ) {
+		$dir     = wp_upload_dir();
+		$baseurl = trailingslashit( self::get_clean_url( $dir['baseurl'] ) );
+		if ( false === strpos( $clean_url, $baseurl ) ) {
 			return new self;
 		}
 
@@ -75,6 +77,21 @@ class Attachment {
 			}
 		}
 		return new self( $attachment_id );
+	}
+
+	/**
+	 * Strips the protocol from the URL and unifies it for comparison
+	 *
+	 * @param string $url Url to clean up.
+	 *
+	 * @return string
+	 */
+	static public function get_clean_url( $url ) {
+		return preg_replace(
+			'/^https?:\/\//',
+			'',
+			trim( strtolower( $url ) )
+		);
 	}
 
 	/**
