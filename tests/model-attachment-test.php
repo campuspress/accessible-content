@@ -49,8 +49,18 @@ class Model_Attachment_Test extends Test\UnitTestCase {
 			strpos( $clean_url, $home ),
 			'clean url should contain home'
 		);
+	}
 
+	public function test_from_url_returns_attachment() {
+		$imgurl = home_url( '/files/2020/05/5-Ways-To-Share-And-Market-Your-Teacher-Blog-1024x683.jpeg' );
 		$img = Model\Attachment::from_url( $imgurl );
+
+		$this->assertTrue( is_object( $img ), 'image should be an object' );
+		$this->assertTrue(
+			$img instanceof Model\Attachment,
+			'image should be an attachment model'
+		);
+		$this->assertEquals( 0, $img->get_id(), 'attachment resolution should fail for missing image' );
 	}
 
 }
