@@ -41,6 +41,8 @@ $opts = Options::get();
 				<span><?php esc_html_e( 'Allow frontend replacement?', Main::DOMAIN ); ?></span>
 				<div class="<?php $this->attr( 'description' ); ?>">
 					<?php esc_html_e( 'Enabling this will add fallback alt tags for all the images that have them.', Main::DOMAIN ); ?>
+					<br />
+					<small><?php esc_html_e( 'Process the images inserted into content before the plugin was active, and/or prior to making a change to an image in Media > Alt text page and retroactively apply Alt tags to already existing post markup', Main::DOMAIN ); ?></small>
 				</div>
 			</label>
 
