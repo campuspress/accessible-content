@@ -4,27 +4,12 @@ const getData = which => {
 
 const isChecked = () => !! getData( 'checked' );
 
-const lock = () => {
-	if ( isChecked() ) {
-		return;
-	}
-	document.querySelector( '#publishing-action #publish' )
-		.setAttribute( 'disabled', true );
-};
-
-const unlock = () => {
-	document.querySelector( '#publishing-action #publish' )
-		.removeAttribute( 'disabled' );
-	return true;
-};
-
 const setPostUnchecked = () => {
 	if ( ! isChecked() ) {
 		// Already marked dirty, no need to do this again.
 		return;
 	}
 	campus_a11y_insights.post.checked = false;
-	lock();
 };
 
 const setPostChecked = () => {
@@ -33,7 +18,6 @@ const setPostChecked = () => {
 		return;
 	}
 	campus_a11y_insights.post.checked = true;
-	unlock();
 };
 
 const dispatchEditorListeners = () => {
@@ -54,9 +38,6 @@ const dispatchEditorListeners = () => {
 };
 
 const boot = () => {
-	if ( 'publish' !== getData( 'status' ) ) {
-		lock();
-	}
 	dispatchEditorListeners();
 };
 export default () => setTimeout( boot );
