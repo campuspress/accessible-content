@@ -4,21 +4,6 @@ const isChecked = () => {
 	return !!campus_a11y_insights.post.checked;
 };
 
-const isLocked = () => wp.data.select( 'core/editor' ).isPostSavingLocked();
-const unlock = () => {
-	if ( isLocked() ) {
-		wp.data.dispatch('core/editor').unlockPostSaving();
-	}
-
-	return true;
-};
-const lock = () => {
-	// Do not lock already published post.
-	if ( ! wp.data.select( 'core/editor' ).isCurrentPostPublished() ) {
-		wp.data.dispatch('core/editor').lockPostSaving();
-	}
-};
-
 const setPostUnchecked = () => {
 	if ( ! isChecked() ) {
 		// Already marked dirty, no need to do this again.
@@ -26,7 +11,6 @@ const setPostUnchecked = () => {
 	}
 	campus_a11y_insights.post.checked = false;
 	toggleSidebar();
-	lock();
 };
 
 const setPostChecked = () => {
@@ -36,7 +20,6 @@ const setPostChecked = () => {
 	}
 	campus_a11y_insights.post.checked = true;
 	toggleSidebar();
-	unlock();
 };
 
 const toggleSidebar = () => {
@@ -57,9 +40,6 @@ const insight = () => wp.element.createElement(
 	);
 
 const prepublisher = () => {
-	if ( ! isChecked() ) {
-		wp.data.dispatch('core/editor').lockPostSaving();
-	}
 	return wp.element.createElement(
 		wp.editPost.PluginPrePublishPanel,
 		{
@@ -74,9 +54,6 @@ const prepublisher = () => {
 const boot = () => {
 	if ( ! wp.data.select( 'core/editor' ).isCurrentPostPublished() ) {
 		wp.plugins.registerPlugin( 'campus-a11y-prepublish', { render: prepublisher } );
-		if ( ! isLocked() && ! isChecked() ) {
-			lock();
-		}
 	}
 	wp.data.subscribe( () => {
 		const data = wp.data.select( 'core/editor' );
