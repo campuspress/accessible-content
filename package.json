@@ -36,7 +36,7 @@
     "core-js": "^3.6.5",
     "eslint": "^7.6.0",
     "file-loader": "^6.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "node-wp-i18n": "^1.2.3",
     "npm-watch": "^0.6.0",
     "postcss-loader": "^3.0.0",
